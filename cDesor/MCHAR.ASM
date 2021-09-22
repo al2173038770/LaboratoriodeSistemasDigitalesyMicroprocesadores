@@ -1,0 +1,25 @@
+title mchar.asm
+.model small
+.stack 100h
+
+.data 
+saludo db 'HOLA','$'
+
+.code
+main proc
+ mov ax, @data ;inicializar saludo
+ mov ds,ax
+
+ mov dx, offset saludo ;Imprimimos todo el saludo
+ mov ah,9
+ int 21h
+
+ mov bx, offset saludo
+ mov dl,[bx]
+ mov ah,2
+ int 21h
+
+ mov ah,4ch
+ int 21h 
+main endp
+end
