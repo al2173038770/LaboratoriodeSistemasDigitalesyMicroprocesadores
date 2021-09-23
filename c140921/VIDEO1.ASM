@@ -1,7 +1,9 @@
 title VIDEO1.ASM
 .model small
 .stack 100h
-.data db "HOLA","$"
+
+.data 
+saludo db "HOLA","$"
 
 .code 
 main proc
